@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - name: todo
-        image: 123456789012.dkr.ecr.ap-south-1.amazonaws.com/gitaction:sha-123456
+        image: 138645654058.dkr.ecr.ap-south-1.amazonaws.com/gitaction:fb9f17efd6f689a410b205afff654afacdbd0566
         ports:
         - containerPort: 8080
+
