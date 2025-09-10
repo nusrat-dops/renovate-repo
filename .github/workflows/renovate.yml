@@ -38,24 +38,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           configurationFile: renovate.json
-          configuration: |
-                {
-                  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-                  "hostRules": [
-                    {
-                      "matchHost": "138645654058.dkr.ecr.ap-south-1.amazonaws.com",
-                      "hostType": "docker",
-                      "username": "AWS"
-                      // Password is handled by aws-actions/configure-aws-credentials
-                    }
-                  ],
-                  "docker": {
-                    "registryUrls": [
-                      "https://138645654058.dkr.ecr.ap-south-1.amazonaws.com"
-                    ]
-                  }
-                  // ... other Renovate configurations
-                }
         env:
           RENOVATE_REPOSITORIES: nusrat-dops/renovate-repo
           # LOG_LEVEL: debug
