@@ -1,0 +1,17 @@
+{
+  "extends": ["config:base"],
+  "kubernetes": {
+    "fileMatch": ["(^|/)k8s/.*\\.ya?ml$"]
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["kubernetes"],
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "123456789012.dkr.ecr.ap-south-1.amazonaws.com/gitaction"
+      ],
+      "groupName": "todo-app-image-updates",
+      "automerge": false
+    }
+  ]
+}
