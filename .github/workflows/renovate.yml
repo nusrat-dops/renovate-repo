@@ -34,9 +34,9 @@ jobs:
 
       # Run Renovate
       - name: Run Renovate
-        uses: docker://renovate/renovate:latest
+        uses: renovatebot/github-action@v40.1.12
         env:
           # Use GitHub-provided token
           RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RENOVATE_REPOSITORIES: ${{ github.repository }}
-          LOG_LEVEL: debug
+          # LOG_LEVEL: debug
