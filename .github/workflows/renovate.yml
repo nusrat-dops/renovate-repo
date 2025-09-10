@@ -38,4 +38,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           configurationFile: renovate.json
+        env:
+          RENOVATE_REPOSITORIES: nusrat-dops/renovate-repo
           # LOG_LEVEL: debug
