@@ -8,10 +8,11 @@
       "matchManagers": ["kubernetes"],
       "matchDatasources": ["docker"],
       "matchPackageNames": [
-        "123456789012.dkr.ecr.ap-south-1.amazonaws.com/gitaction"
+        "138645654058.dkr.ecr.ap-south-1.amazonaws.com/gitaction"
       ],
       "groupName": "todo-app-image-updates",
       "automerge": false
     }
   ]
 }
+
