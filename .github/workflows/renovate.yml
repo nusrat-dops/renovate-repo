@@ -1,0 +1,39 @@
+name: Renovate - Update Manifests
+
+on:
+  workflow_dispatch:   # manual trigger
+  schedule:
+    - cron: '0 */6 * * *'  # every 6 hours
+
+permissions:
+  contents: write
+  id-token: write   # needed for OIDC role assumption
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # Authenticate to AWS using OIDC
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.ECR_ROLE_ARN }}
+          aws-region: ap-south-1
+
+      # Login to ECR so Renovate can see tags
+      - name: Login to ECR
+        run: |
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          ECR_REGISTRY="$ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com"
+          echo "ECR_REGISTRY=$ECR_REGISTRY" >> $GITHUB_ENV
+          aws ecr get-login-password --region ap-south-1 | \
+            docker login --username AWS --password-stdin "$ECR_REGISTRY"
+
+      # Run Renovate
+      - name: Run Renovate
+        uses: renovate/renovate@v36
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
