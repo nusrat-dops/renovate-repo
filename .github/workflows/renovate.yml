@@ -34,6 +34,6 @@ jobs:
 
       # Run Renovate
       - name: Run Renovate
-        uses: renovate/renovate@v36
+        uses: docker://renovate/renovate:latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
