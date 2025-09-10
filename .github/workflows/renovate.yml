@@ -39,3 +39,4 @@ jobs:
           # Use GitHub-provided token
           RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RENOVATE_REPOSITORIES: ${{ github.repository }}
+          LOG_LEVEL: debug
