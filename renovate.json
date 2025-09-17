@@ -3,6 +3,7 @@
   "extends": [
     "config:base"
   ],
+  "repositories": ["nusrat-dops/k8-manifest"],
   "flux": {
     "fileMatch": ["\\.yaml$"]
   },
@@ -10,3 +11,4 @@
     "fileMatch": ["\\.yaml$"]
   }
 }
+
