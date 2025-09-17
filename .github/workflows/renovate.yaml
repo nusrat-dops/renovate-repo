@@ -23,5 +23,5 @@ jobs:
         uses: renovatebot/github-action@v43.0.12
        
         with:
-          token: ${{ secrets.GITOPS_PAT }}
+          token: ${{ secrets.GITOPS_APT}}
           configurationFile: renovate.json
