@@ -8,7 +8,9 @@
   "hostRules": [
     {
       "matchHost": "ghcr.io",
-      "hostType": "docker"
+      "hostType": "docker",
+      "username": "nusrat-dops",
+      "password": "${{ secrets.GITOPS_PAT}}"
     }
   ],
 
@@ -32,6 +34,7 @@
     }
   ]
 }
+
 
 
 
