@@ -8,8 +8,7 @@
   "hostRules": [
     {
       "matchHost": "ghcr.io",
-      "hostType": "docker",
- 
+      "hostType": "docker"
     }
   ],
 
@@ -33,6 +32,7 @@
     }
   ]
 }
+
 
 
 
