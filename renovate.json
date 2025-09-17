@@ -1,15 +1,38 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:recommended"],
+
   "repositories": ["nusrat-dops/renovate-repo"],
-  "flux": {
-    "fileMatch": ["\\.yaml$"]
-  },
-  "kubernetes": {
-    "fileMatch": ["\\.yaml$"]
-  }
+  "dependencyDashboard": true,
+
+  "hostRules": [
+    {
+      "matchHost": "ghcr.io",
+      "hostType": "docker",
+      "username": "nusrat-dops",
+      "password": "${{ secrets.GITOPS_PAT }}"
+    }
+  ],
+
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchPackageNames": ["ghcr.io/nusrat-dops/renovate-repo"],
+      "groupName": "ghcr-docker-images",
+      "automerge": true
+    }
+  ],
+
+  "regexManagers": [
+    {
+      "fileMatch": ["^deployment\\.yaml$"],
+      "matchStrings": [
+        "image:\\s*ghcr\\.io/nusrat-dops/renovate-repo:(?<currentValue>[\\w\\.\\-]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "ghcr.io/nusrat-dops/renovate-repo"
+    }
+  ]
 }
 
 
