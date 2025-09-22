@@ -2,7 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
 
-
+  "platform": "github",
+  "repositories": ["nusrat-dops/renovate-repo"],
   "dependencyDashboard": false,
 
   "hostRules": [
@@ -34,6 +35,7 @@
     }
   ]
 }
+
 
 
 
