@@ -1,9 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":dependencyDashboardApproval"],
+  "extends": ["config:recommended"],
 
   "repositories": ["nusrat-dops/renovate-repo"],
-  "dependencyDashboard": true,
+  "dependencyDashboard": false,
 
   "hostRules": [
     {
@@ -34,6 +34,7 @@
     }
   ]
 }
+
 
 
 
