@@ -19,7 +19,7 @@
       "matchManagers": ["regex"],
       "matchPackageNames": ["ghcr.io/nusrat-dops/renovate-repo"],
       "groupName": "ghcr-docker-images",
-      "automerge": true
+      "automerge": false
     }
   ],
 
@@ -34,6 +34,7 @@
     }
   ]
 }
+
 
 
 
