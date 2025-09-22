@@ -3,7 +3,7 @@
   "extends": ["config:base"],
  
   "dependencyDashboard": false,
-
+  "prHourlyLimit": 5
   "packageRules": [
     {
       "matchManagers": ["regex"],
@@ -24,6 +24,7 @@
     }
   ]
 }
+
 
 
 
