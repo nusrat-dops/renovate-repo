@@ -41,8 +41,8 @@ jobs:
           docker push ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }}
 
           # optional: also push :latest
-          docker tag ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }} ${{ steps.meta.outputs.image }}:latest
-          docker push ${{ steps.meta.outputs.image }}:latest
+          # docker tag ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }} ${{ steps.meta.outputs.image }}:latest
+          # docker push ${{ steps.meta.outputs.image }}:latest
 
   # deploy:
   #   name: Deploy
