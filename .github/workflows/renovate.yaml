@@ -25,4 +25,4 @@ jobs:
         with:
           token: ${{ secrets.GITOPS_PAT }}
           configurationFile: renovate.json
-          repositories: owner/repo-name
+          repositories: nusrat-dops/renovate-repo
