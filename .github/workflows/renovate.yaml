@@ -25,4 +25,3 @@ jobs:
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: renovate.json
-          repositories: nusrat-dops/renovate-repo
