@@ -23,6 +23,6 @@ jobs:
         uses: renovatebot/github-action@v43.0.13
        
         with:
-          token: ${{ secrets.GITOPS_PAT }}
+          token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: renovate.json
           repositories: nusrat-dops/renovate-repo
