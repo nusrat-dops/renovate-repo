@@ -24,7 +24,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITOPS_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Define image metadata
         id: meta
