@@ -4,12 +4,6 @@
      "docker:enableMajor"
   ],
   "dependencyDashboard": true,
- "kubernetes": {
-    "fileMatch": [
-      "manifests/**/*.yaml",
-      "deployments/*.yml"
-    ]
-  },
   "packageRules": [
     {
       "matchDatasources": ["docker"],
