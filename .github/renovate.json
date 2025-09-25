@@ -15,7 +15,7 @@
       "groupName": "Container Images (GHCR)",
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
-      "prCreation": "not-before-existing"
+      "prCreation": "not-before-existing",
       "automergeType": "pr"
     }
   ],
