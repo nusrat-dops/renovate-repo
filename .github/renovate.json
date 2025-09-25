@@ -13,7 +13,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["(^|/)deployment/.*\\.yaml$"],
+      "fileMatch": ["(^|/)manifests/.*\\.yaml$"],
       "matchStrings": [
         "image:\\s*(?<depName>ghcr\\.io/[^:]+):(?<currentValue>.*)"
       ],
