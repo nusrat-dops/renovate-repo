@@ -7,6 +7,7 @@
   "packageRules": [
     {
       "matchManagers": ["regex"],
+     "matchDatasources": ["docker"]
       "matchPackageNames": ["ghcr.io/nusrat-dops/renovate-repo"],
       "groupName": "ghcr-docker-images",
       "automerge": false
@@ -16,6 +17,7 @@
   "regexManagers": [
     {
       "fileMatch": ["^deployment\\.yaml$"],
+       "fileMatch": ["(^|/)manifests/.*\\.yaml$"],
       "matchStrings": [
         "image:\\s*ghcr\\.io/nusrat-dops/renovate-repo:(?<currentValue>[\\w\\.\\-]+)"
       ],
