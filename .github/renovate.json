@@ -4,7 +4,7 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["container"],
+      "matchDatasources": ["docker"],
       "matchPackagePrefixes": ["ghcr.io/"],
       "groupName": "Container Images (GHCR)",
       "automerge": true,
