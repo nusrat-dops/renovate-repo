@@ -1,14 +1,21 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+     "docker:enableMajor"
   ],
   "dependencyDashboard": true,
+  "labels": ["dependencies", "docker"],
+  "docker-manager": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "matchPackagePrefixes": ["ghcr.io/"],
       "groupName": "Container Images (GHCR)",
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
+      "prCreation": "not-before-existing"
       "automergeType": "pr"
     }
   ],
