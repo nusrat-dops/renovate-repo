@@ -1,0 +1,29 @@
+name: Renovate
+
+on:
+  workflow_dispatch:
+ # schedule:
+   # - cron: '*/5 * * * *' # Run every 5 minutes
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v37.261.0
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+          configurationFile: renovate.json
+          git-credential-helper: "true"
+          host-rules: |
+            [
+              {
+                "hostType": "github",
+                "repository": "ghcr.io",
+                "username": "${{ github.actor }}",
+                "password": "${{ secrets.GITHUB_TOKEN }}"
+              }
+            ]
