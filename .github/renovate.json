@@ -4,9 +4,11 @@
      "docker:enableMajor"
   ],
   "dependencyDashboard": true,
-  "labels": ["dependencies", "docker"],
-  "docker-manager": {
-    "enabled": true
+ "kubernetes": {
+    "fileMatch": [
+      "manifests/**/*.yaml",
+      "deployments/*.yml"
+    ]
   },
   "packageRules": [
     {
