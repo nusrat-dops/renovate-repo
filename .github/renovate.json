@@ -1,19 +1,26 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "packageRules": [
     {
-      "matchDatasources": ["container"],
-      "matchPackagePrefixes": ["ghcr.io/"],
+      "matchDatasources": [
+        "container"
+      ],
       "groupName": "Container Images (GHCR)",
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "ghcr.io/{/,}**"
+      ]
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["(^|/)manifests/.*\\.yaml$"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)manifests/.*\\.yaml$/"
+      ],
       "matchStrings": [
         "image:\\s*(?<depName>ghcr\\.io/[^:]+):(?<currentValue>.*)"
       ],
