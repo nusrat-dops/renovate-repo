@@ -14,17 +14,7 @@ jobs:
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v43.0.13
-        env:
-          GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
         with:
-          # token: ${{ secrets.RENOVATE_TOKEN }}
+          token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: .github/renovate.json
-          host-rules: |
-            [
-              {
-                "hostType": "github",
-                "repository": "ghcr.io",
-                "username": "${{ github.actor }}",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
-              }
-            ]
+         
