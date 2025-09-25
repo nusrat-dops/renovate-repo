@@ -17,7 +17,7 @@
       "matchStrings": [
         "image:\\s*(?<depName>ghcr\\.io/nusrat-dops/renovate-repo):(?<currentValue>.*)"
       ],
-      "datasourceTemplate": "container"
+      "datasourceTemplate": "docker"
     }
   ]
 }
