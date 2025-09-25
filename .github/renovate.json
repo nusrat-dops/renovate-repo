@@ -1,20 +1,27 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "dependencyDashboard": true,
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchPackagePrefixes": ["ghcr.io/"],
+      "matchDatasources": [
+        "docker"
+      ],
       "groupName": "Container Images (GHCR)",
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "ghcr.io/{/,}**"
+      ]
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["(^|/)manifests/.*\\.yaml$"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)manifests/.*\\.yaml$/"
+      ],
       "matchStrings": [
         "image:\\s*(?<depName>ghcr\\.io/nusrat-dops/renovate-repo):(?<currentValue>.*)"
       ],
