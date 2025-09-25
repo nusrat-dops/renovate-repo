@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["container"],
+      "matchPackagePrefixes": ["ghcr.io/"],
+      "groupName": "Container Images (GHCR)",
+      "automerge": true,
+      "automergeType": "pr"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/)deployment/.*\\.yaml$"],
+      "matchStrings": [
+        "image:\\s*(?<depName>ghcr\\.io/[^:]+):(?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "container"
+    }
+  ]
+}
