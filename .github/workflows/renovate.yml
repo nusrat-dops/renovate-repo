@@ -14,10 +14,11 @@ jobs:
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v43.0.13
+        env:
+          GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
         with:
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          # token: ${{ secrets.RENOVATE_TOKEN }}
           configurationFile: .github/renovate.json
-          git-credential-helper: "true"
           host-rules: |
             [
               {
