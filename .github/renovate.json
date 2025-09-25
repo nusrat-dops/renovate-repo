@@ -4,14 +4,14 @@
      "docker:enableMajor"
   ],
   "dependencyDashboard": true,
+  "prHourlyLimit": 5,
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "matchPackagePrefixes": ["ghcr.io/"],
       "groupName": "Container Images (GHCR)",
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "prCreation": "not-before-existing",
+      "automerge": false,
       "automergeType": "pr"
     }
   ],
