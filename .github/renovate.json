@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "matchManagers": ["regex"],
-     "matchDatasources": ["docker"]
+     "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/nusrat-dops/renovate-repo"],
       "groupName": "ghcr-docker-images",
       "automerge": false
