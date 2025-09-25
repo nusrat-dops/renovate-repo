@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: ghcr.io/nusrat-dops/renovate-repo:7   # will be overridden by overlay
+          image: ghcr.io/nusrat-dops/renovate-repo:6   # will be overridden by overlay
           ports:
             - containerPort: 8000
