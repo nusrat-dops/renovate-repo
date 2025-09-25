@@ -1,28 +1,21 @@
 {
   "extends": [
-    "config:recommended"
+    "config:base"
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "container"
-      ],
+      "matchDatasources": ["container"],
+      "matchPackagePrefixes": ["ghcr.io/"],
       "groupName": "Container Images (GHCR)",
       "automerge": true,
-      "automergeType": "pr",
-      "matchPackageNames": [
-        "ghcr.io/{/,}**"
-      ]
+      "automergeType": "pr"
     }
   ],
-  "customManagers": [
+  "regexManagers": [
     {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/(^|/)manifests/.*\\.yaml$/"
-      ],
+      "fileMatch": ["(^|/)manifests/.*\\.yaml$"],
       "matchStrings": [
-        "image:\\s*(?<depName>ghcr\\.io/[^:]+):(?<currentValue>.*)"
+        "image:\\s*(?<depName>ghcr\\.io/nusrat-dops/renovate-repo):(?<currentValue>.*)"
       ],
       "datasourceTemplate": "container"
     }
